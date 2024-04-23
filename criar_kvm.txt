@@ -1,0 +1,8 @@
+Create a virtual machine:
+
+- Archlinux {
+    - Choose the iso file
+    - To define memory: 8192
+    - the cpu settings: 12
+    - create disk image: 50
+}
