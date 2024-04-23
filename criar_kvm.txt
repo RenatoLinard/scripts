@@ -7,4 +7,53 @@ Create a virtual machine:
     - create disk image: 50
     - Mark custumize configuration before install
     -  
+},a
+
+windows 11 {
+    - Click on create a new virtual machine 
+        - Select the iso file 
+        - Choose memory and cpu {
+            memory: 8192 
+            cpu: 12
+        }
+    - create a disk image : 80GiB
+        - select customize configuration before install 
+        - overview {
+            - chipset : Q36
+            - firmware: UEFI
+        }
+        - CPU {
+            topology {
+                sockets: 1
+                cores: 6
+                threads: 2
+            }
+        }
+        - Boot options {
+            Enable the boot menu
+            Move SATA CDROM 1 to the top 
+        }
+        - SATA DISK 1 {
+            disk bus: virtIO
+        }
+        - CDROM SATA 1 {
+            add hardware {
+                mark select or create custom storage
+                add vitIO win
+                device type: CDROM device
+                return to the boot menu and add new device
+            }
+        }
+        - TPM vNONE {
+            type: emulated
+            version: 2.0
+        }
+
+        - escolher drive a ser intalado {
+            unidade cd (E) virtIO {
+                amd64 {
+                    win11
+                }
+            }
+        }
 }
