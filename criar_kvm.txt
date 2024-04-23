@@ -5,4 +5,6 @@ Create a virtual machine:
     - To define memory: 8192
     - the cpu settings: 12
     - create disk image: 50
+    - Mark custumize configuration before install
+    -  
 }
