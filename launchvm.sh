@@ -26,10 +26,11 @@ then
     echo "Virtual Machine win11 is starting now... Waiting 30s before starting xfreerdp."
     notify-send "Virtual Machine win11 is starting now..." "Waiting 30s before starting xfreerdp."
     virsh --connect qemu:///system start win11
+    #sleep 30
 else
     notify-send "Virtual Machine win11 is already running." "Launching xfreerdp now!"
     echo "Starting xfreerdp now..."
 fi
 
-xfreerdp -grab-keyboard /v:$vmip /size:100% /u:$win11user /p:$win11pass /d: /dynamic-resolution &
+xfreerdp -grab-keyboard /v:$vmip /size:100% /u:$win11user /p:$win11pass /d: /dynamic-resolution /gfx:AVC444 &
 
