@@ -32,5 +32,5 @@ else
     echo "Starting xfreerdp now..."
 fi
 
-xfreerdp -grab-keyboard /v:$vmip /size:100% /u:$win11user /p:$win11pass /d: /dynamic-resolution /gfx:AVC444 &
+xfreerdp -grab-keyboard /v:$vmip /size:100% /u:$win11user /p:$win11pass /d: /dynamic-resolution /gfx:avc444 &
 
