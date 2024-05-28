@@ -14,12 +14,30 @@
 # ------------------------------------------------------
 
 read -p "Do you want to start? " s
-echo "START KVM/QEMU/VIRT MANAGER INSTALLATION..."
+echo "START KVM/QEMU-full/VIRT MANAGER INSTALLATION..."
 
 # ------------------------------------------------------
 # Install Packages
 # ------------------------------------------------------
-sudo pacman -S virt-manager virt-viewer qemu vde2 ebtables iptables-nft nftables dnsmasq bridge-utils ovmf swtpm
+sudo pacman -Rdd iptables --noconfirm
+sudo pacman -S --noconfirm --needed iptables-nft
+sudo pacman -S --noconfirm --needed ebtables 
+sudo pacman -S --noconfirm --needed nftables 
+
+sudo pacman -S --noconfirm --needed qemu-full
+sudo pacman -S --noconfirm --needed virt-manager
+sudo pacman -S --noconfirm --needed virt-viewer
+sudo pacman -S --noconfirm --needed dnsmasq
+sudo pacman -S --noconfirm --needed vde2
+sudo pacman -S --noconfirm --needed bridge-utils
+sudo pacman -S --noconfirm --needed ovmf
+sudo pacman -S --noconfirm --needed edk2-ovmf
+sudo pacman -S --noconfirm --needed swtpm
+
+#sudo pacman -S --noconfirm --needed spice-vdagent 
+#sudo pacman -S --noconfirm --needed xf86-video-qxl
+
+sudo pacman -S --noconfirm --needed dmidecode
 
 # ------------------------------------------------------
 # Edit libvirtd.conf
